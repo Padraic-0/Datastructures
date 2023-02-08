@@ -1,0 +1,3 @@
+In the array sort program the program runs with no seg faults. The error is that the list is improperly sorted. The gdp program doesnt
+catch this so I inspected the sort function. The for loop starts at a value 1 and moves to the next for loop. This one starts at i and works
+down. While j >= 0 j must go to -1 to end the for loop. instead we want j >= 1 so the loop ends at 0.

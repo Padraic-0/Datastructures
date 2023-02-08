@@ -1,0 +1,27 @@
+1. Due to the requirements of the program a linked list would be a good way to store the data. Because we dont need to look through
+data, just add to it, a linked list is a better option. A linked list when resized has O(1), compared to array O(n). In most cases 
+that our program faces, a linked list will provide O(1). In cases such at iteration, both linked list and array have O(n).
+Addionaly, a linked list uses memerory more efficiently because the perceies
+amount of mememory is used, unlike a array having to double its capasity when the array is full.
+
+Reasons to not use a dynamic array:
+O(n) when resizing the array
+Uses 2x the needed mememory at the worse case
+specific data doesnt need to be found
+
+
+
+part2:
+    doubling array: 1000000 0.02
+    tripling array: 1000000 0.03
+    e array: 1000000 0.03
+    1000 array: 1000000 0.01 
+
+Plot 10 shows possibly the best stratagy to resize the array. It seems that the plot has the least area under the curve which I
+would think means that it takes the least amount of time.
+It seems doubling had some of the highest run times, up to 0.04 seconds. The graph for doubling also looks differnt than others,
+the peaks look more like mts instead of spikes.
+I think the spikes from tripling and 10 and 100 were caused because the resizing happens alot less often, speading up time, while
+still coping over the same amount of data.
+Unforunatly, when tripling or more a array, alot of mememory goes unused. At best case 100% of the mememory is used where at worse
+case 50% is used. When the arrays get to largers capacities alot 50% is alot of mememory.

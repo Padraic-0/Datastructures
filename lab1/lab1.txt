@@ -1,0 +1,71 @@
+Part 2
+    a:
+        This function takes in an array and array length. A while true loop is started, causing a for loop-
+        to run aswell. This for loop runs from 1 to the length of the array, each time moving along by one.
+        Each time the loop is ran, the value of at a certain index is compared to the previous value in the index-
+        to see if the new value is smaller then the previous. If the new value is smaller, then it is switched with the previous value.
+        Once this for loop completes the length of the array to be used in lowered by 1. The for loop then runs again.
+        This moves the largest number to the end of the index, eventually leading to a sorted array in accending order.
+        For the numbers in the given array, the output would be:
+        -21 0 1 3 3 12 15 51 56 83 135 659
+
+    b:
+        A number is inputed into the function. This function divided that number by 2, and then runs a for loop looking for when-
+        it has a remainder 0 when the orginal number is divided by i(which starts at 2). If the inputed number never has a remainder 0-
+        then 0 is returned from the function. If the inputed number is divisable/ has a remainder 0, then the function returns 1.
+        input:
+            (4)- 0 is printed
+            (7)- 1 is printed
+            (1)- 0 is printed
+            (2)- 1 is printed
+
+Part 3
+    3:
+        1: a = 0x7ffe97df2dc0, b = 0x760010, c = 0x40074d
+        2: a[0] = 200, a[1] = 101, a[2] = 102, a[3] = 103
+        3: a[0] = 200, a[1] = 300, a[2] = 301, a[3] = 302
+        4: a[0] = 200, a[1] = 400, a[2] = 301, a[3] = 302
+        5: a[0] = 200, a[1] = 128144, a[2] = 256, a[3] = 302
+        6: a = 0x7ffe97df2dc0, b = 0x7ffe97df2dc4, c = 0x7ffe97df2dc1
+
+    4:
+        1:
+            a- In the first print statement we get the memory adress of b and c because they are defined as pointers. A gives us a slightly-
+            differnt adress that isnt the same length as the other two adresses. This must be because its not a pointer but also becasue-
+            its an array it cant print out a number, so it prints out and adress to the array?
+            b- a = 0x7ffe97df2dc0, b = 0x760010, c = 0x40074d
+            c- a = [NULL,NULL,NULL,NULL], b = malloc(16) which i think also is a adress to the allocated memory, c = NULL
+
+        2:
+            a- C is set equal to the array A, a[1]-[4] are set to 100,101,102,103 respectfully and then c[0] is set to 200. The print-
+            function uses the a[4] array so a[0] would be 100, but because c = a and both are pointers, a change to C also causes a change-
+            to A. So a[0] is overriten to = 200.
+            b- a = 0x7ffe97df2dc0, b = 0x760010, c = a
+            c- a =[200,101,102,103], b = malloc(16), c = a
+        
+        3: 
+            a- The array a[4] is furthure changed so that it has the values: 200,300,301,302. After the previous print statement, -
+            c[1] is set to 300 which then causes a[1] to be changed to 300. The next code i havent seen, but it seems to work similiar to-
+            c[2] and c[3] being changed to 301 and 302
+            b- a = 0x7ffe97df2dc0, b = 0x760010, c = a
+            c- a =[200,300,301,302], b = malloc(16), c = a
+        
+        4:
+            a- the line "c = c + 1" must set c equal to its next index, so c[1]. This allows *c = 400 to work similair to c[1]=400.
+            The rest of the array is left the same.
+            b- a = 0x7ffe97df2dc0, b = 0x760010, c = c + 1
+            c- a = [200,400,301,302], b = malloc(16), c = a
+
+        5:
+            a- i dont know what happens here, maybe random values are accessed which cause for 128144 and 256 to be put in the array.
+            Though 256 doesnt seem like a random number.
+            b-  a = 0x7ffe97df2dc0, b = 0x760010, c = a
+            c- a = [200,128144,256,302], b = malloc(16), c = a
+        
+        6: 
+            a- again char * is used and im not sure what it causes but it seems to cause all of the adresses to be close together.
+            b- a = 0x7ffe97df2dc0, b = 0x7ffe97df2dc4, c = 0x7ffe97df2dc1
+            c- maybe a = [200,128144,256,302], b = NULL, c = [128144,256,302]
+    
+    
+        

@@ -1,0 +1,3 @@
+In the sort function the list is able to be sorted until a seg fault. This seg fault come when the while loop runs. The current node has a val
+but its next* is null. Non the less, the if statement compares the current val to the next nodes val. The next node is null, thus it has no val.
+This causes the seg fault. To fix this, the while loop needs to be while(curr->next != NULL). The list will still be sorted because no other nodes exits when this statement is true.
